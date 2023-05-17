@@ -1,6 +1,7 @@
 package entità;
 
 import java.sql.Date;
+import java.util.Set;
 import java.util.UUID;
 
 import javax.persistence.Entity;
@@ -25,22 +26,24 @@ public class User {
 	private String email;
 	private Date birday;
 	private UserGenere genere;
+	private Set<partecipazione> partecipazione ;
 	
 	
 	public User() {
 		
 	};
 	
-	public User(String name, String lastName, String email, Date birday, UserGenere genere) {
+	public User(String name, String lastName, String email, Date birday, UserGenere genere, Set<partecipazione> partecipazione) {
 		this.name = name;
 		this.lastName = lastName;
 		this.email = email;
 		this.birday = birday;
 		this.genere = genere;
+		this.partecipazione = partecipazione;
 	};
 	 
 	@Override 
 	public String toString() {
-		return "User: " + name + " / " + lastName + " / " + email + " / " + genere;
+		return "User: " + name + " / " + lastName + " / " + email + " / " + genere + " / " + partecipazione;
 	};
 }
